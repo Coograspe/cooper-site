@@ -280,14 +280,14 @@ a:hover {
 
 .frame-img {
   width: 100%;
-  aspect-ratio: 4/3;
+  aspect-ratio: 3/2;
   border: 1px solid #c8c2bc;
   box-shadow: 2px 3px 12px rgba(0,0,0,0.1);
   transition: box-shadow 0.2s ease, transform 0.2s ease;
 }
 
 .frame-tall .frame-img {
-  aspect-ratio: 3/4;
+  aspect-ratio: 2/3;
 }
 
 .frame:hover .frame-img {
