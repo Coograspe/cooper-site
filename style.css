@@ -84,8 +84,8 @@ a:hover {
 }
 
 .bio-photo-placeholder {
-  width: 100%;
-  aspect-ratio: 1;
+  width: 80px;
+  height: 80px;
   background: #d6d0c4;
   border: 1px solid var(--rule);
   margin-bottom: 4px;
