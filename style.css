@@ -1,0 +1,210 @@
+/* ─── Reset ─────────────────────────────────────────── */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ─── Base ───────────────────────────────────────────── */
+:root {
+  --paper: #f7f4ee;
+  --ink: #1a1a18;
+  --rule: #c8c4bc;
+  --muted: #8a8880;
+  --col-gap: 40px;
+}
+
+body {
+  font-family: monospace;
+  background: var(--paper);
+  color: var(--ink);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ─── Persistent header ──────────────────────────────── */
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 16px 40px;
+  border-bottom: 1px solid var(--rule);
+  position: sticky;
+  top: 0;
+  background: var(--paper);
+  z-index: 10;
+}
+
+.header-name {
+  font-weight: bold;
+  letter-spacing: 0.02em;
+}
+
+.header-nav {
+  display: flex;
+  gap: 24px;
+}
+
+.header-nav a {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.header-nav a:hover {
+  color: var(--ink);
+  text-decoration: none;
+}
+
+/* ─── Door page layout ───────────────────────────────── */
+.door-page {
+  display: flex;
+  height: calc(100vh - 49px); /* full height minus header */
+}
+
+.col {
+  padding: var(--col-gap);
+}
+
+.bio {
+  flex: 1;
+  border-right: 1px solid var(--rule);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 16px;
+}
+
+.bio-title {
+  font-size: 16px;
+}
+
+.bio-body {
+  color: var(--muted);
+  max-width: 28ch;
+}
+
+/* ─── Door center ────────────────────────────────────── */
+.door-col {
+  flex: 1.4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.door-frame {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  text-decoration: none;
+}
+
+/* Placeholder door — replace with scanned image later */
+.door-placeholder {
+  width: 200px;
+  height: 380px;
+  border: 2px solid var(--ink);
+  position: relative;
+  background: #d6d0c4;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  gap: 10px;
+  transition: filter 0.2s ease;
+}
+
+.door-frame:hover .door-placeholder {
+  filter: brightness(0.93);
+}
+
+/* door panels — two stacked rectangles like a real apartment door */
+.door-placeholder::before,
+.door-placeholder::after {
+  content: '';
+  display: block;
+  border: 1px solid #a09a8e;
+}
+
+.door-placeholder::before {
+  flex: 1;
+}
+
+.door-placeholder::after {
+  flex: 2;
+}
+
+.doorknob {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #7a7468;
+  border: 1px solid #5a5450;
+  position: absolute;
+  right: 18px;
+  top: 55%;
+  transform: translateY(-50%);
+}
+
+.door-label {
+  font-size: 12px;
+  color: var(--muted);
+  letter-spacing: 0.05em;
+}
+
+.door-frame:hover .door-label {
+  color: var(--ink);
+}
+
+/* ─── Site map ───────────────────────────────────────── */
+.sitemap {
+  flex: 1;
+  border-left: 1px solid var(--rule);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 16px;
+}
+
+.sitemap-heading {
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.sitemap-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sitemap-list li {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.sitemap-list a {
+  font-size: 15px;
+}
+
+.sitemap-list a:hover {
+  text-decoration: underline;
+}
+
+.room-note {
+  font-size: 11px;
+  color: var(--muted);
+}

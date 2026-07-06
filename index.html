@@ -1,70 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <style>
-
-        * {
-          margin: 0;
-          padding: 0;
-          box-sizing: border-box;
-        }
-      
-        body {
-          height: 100vh;
-          font-family: monospace;
-          background: #f7f4ee;
-        }
-      
-        .door-page {
-          display: flex;
-          height: 100vh;
-        }
-      
-        .bio {
-          flex: 1;
-          padding: 40px;
-          border-right: 1px solid black;
-        }
-      
-        .door {
-          flex: 1.4;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          cursor: pointer;
-        }
-      
-        .sitemap {
-          flex: 1;
-          padding: 40px;
-          border-left: 1px solid black;
-        }
-      
-      </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cooper Sperling</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="door-page">
-  
-      <div class="bio">
-        <h1>Cooper Sperling</h1>
-        <p>Designer, printer, publisher. New York.</p>
-      </div>
-  
-      <div class="door">
-        <p>enter</p>
-      </div>
-  
-      <div class="sitemap">
-        <p>Work</p>
-        <p>Desk</p>
-        <p>Library</p>
-        <p>Archive</p>
-        <p>CV</p>
-      </div>
-  
-    </div>
-  
-  </body>
-</html>
+  <header class="site-header">
+    <span class="header-name">Cooper Sperling</span>
+    <nav class="header-nav">
+      <a href="cv.html">CV</a>
+      <a href="mailto:cgsperling@gmail.com">Contact</a>
+    </nav>
+  </header>
 
+  <main class="door-page">
+
+    <div class="col bio">
+      <p class="bio-title">Designer, printer, publisher.</p>
+      <p class="bio-body">
+        Based in New York. I make printed matter, sound, and research projects
+        at the intersection of culture, community, and form.
+      </p>
+      <p class="bio-body">
+        This site is a living document — a place I update and return to.
+        Not a portfolio. More like an apartment.
+      </p>
+    </div>
+
+    <div class="col door-col">
+      <a href="desk.html" class="door-frame" aria-label="Enter">
+        <div class="door-placeholder">
+          <div class="doorknob"></div>
+        </div>
+        <span class="door-label">enter →</span>
+      </a>
+    </div>
+
+    <div class="col sitemap">
+      <p class="sitemap-heading">Rooms</p>
+      <ul class="sitemap-list">
+        <li><a href="desk.html">The Desk</a><span class="room-note">now / log</span></li>
+        <li><a href="wall.html">The White Wall</a><span class="room-note">work</span></li>
+        <li><a href="library.html">The Wood Wall</a><span class="room-note">reference</span></li>
+        <li><a href="floor.html">The Floor</a><span class="room-note">archive</span></li>
+      </ul>
+    </div>
+
+  </main>
+
+</body>
+</html>
