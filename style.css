@@ -232,58 +232,73 @@ a:hover {
 
 /* ─── Desk page ──────────────────────────────────────── */
 .desk-page {
-  display: flex;
-  height: calc(100vh - 49px);
+  position: relative;
+  min-height: calc(100vh - 49px);
 }
 
-.desk-scan {
-  flex: 1;
+/* Desk surface — the scan fills the whole page as background */
+.desk-surface {
+  position: fixed;
+  inset: 49px 0 0 0; /* sit below header */
+  background: #d4cfc6;
+  z-index: 0;
+}
+
+/* When you have the scan: replace .desk-surface div with an img,
+   or set background-image here */
+
+/* Cards float on top of the desk */
+.desk-cards {
+  position: relative;
+  z-index: 1;
+  columns: 3;
+  column-gap: 20px;
+  padding: 40px;
+  max-width: 1100px;
+}
+
+.card {
+  break-inside: avoid;
+  display: block;
+  margin-bottom: 20px;
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  text-decoration: none;
+  color: inherit;
+}
+
+/* TEXT card */
+.card-text {
+  padding: 20px;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* IMAGE card */
+.card-image img,
+.card-link img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.card-image,
+.card-link {
   overflow: hidden;
 }
 
-/* Placeholder — replace with <img> of desk scan */
-.desk-scan-placeholder {
-  width: 100%;
-  height: 100%;
-  background: #d4cfc6;
-}
-
-.desk-updates {
-  width: 280px;
-  flex-shrink: 0;
-  border-left: 1px solid var(--rule);
-  padding: 28px 24px;
-  overflow-y: auto;
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-
-.updates-label {
-  font-size: 11px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--muted);
-}
-
-.log-entry {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  padding-bottom: 24px;
-  border-bottom: 1px solid var(--rule);
-}
-
-.log-entry:last-child {
-  border-bottom: none;
-}
-
-.log-date {
+.card-caption {
+  display: block;
+  padding: 10px 14px;
   font-size: 11px;
   color: var(--muted);
 }
 
-.log-text {
-  font-size: 13px;
-  line-height: 1.6;
+/* Hover state for link cards */
+.card-link:hover .card-caption {
+  color: var(--ink);
+}
+
+.card-link:hover img {
+  opacity: 0.9;
 }
