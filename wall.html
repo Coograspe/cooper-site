@@ -18,69 +18,74 @@
 
   <main class="wall-page">
 
-    <!-- White wall background — swap for scanned wall image when ready -->
     <div class="wall-surface"></div>
 
-    <!-- When any frame is hovered, siblings dim via .wall-frames:has(.frame:hover) .frame:not(:hover) -->
     <div class="wall-frames">
 
-      <!-- SOR — wide, dominant -->
-      <a class="frame frame-wide" href="projects/sor.html">
-        <div class="frame-img" style="background: #b8b0a4;"></div>
-        <div class="frame-meta">
-          <span class="frame-title">Systems of Release</span>
-          <span class="frame-caption">Issue 3 — full production: layout, color separation, printing 150 copies, Trans Pecos release event</span>
-        </div>
-      </a>
+      <!-- Row 1: Orsynex small left, SOR wide right -->
+      <div class="wall-row">
+        <a class="frame" href="projects/orsynex.html" style="flex: 0 0 22%;">
+          <div class="frame-img" style="aspect-ratio: 1/1; background: #aca8a0;"></div>
+          <div class="frame-meta">
+            <span class="frame-title">Orsynex</span>
+            <span class="frame-caption">2023</span>
+          </div>
+        </a>
+        <a class="frame" href="projects/sor.html" style="flex: 0 0 60%;">
+          <div class="frame-img" style="aspect-ratio: 16/9; background: #b8b0a4;"></div>
+          <div class="frame-meta">
+            <span class="frame-title">Systems of Release</span>
+            <span class="frame-caption">2023–2026 — Promo, Issues 1–3, Artist Index</span>
+          </div>
+        </a>
+      </div>
 
-      <!-- Mae + Bossa Bacteria side by side (handled by grid span) -->
-      <a class="frame frame-small" href="projects/mae.html">
-        <div class="frame-img" style="background: #c4bdb4;"></div>
-        <div class="frame-meta">
-          <span class="frame-title">Mae</span>
-          <span class="frame-caption">Risograph zine — design and print production</span>
-        </div>
-      </a>
+      <!-- Row 2: Bossa wide left, 100 Years narrow right, bottoms aligned -->
+      <div class="wall-row" style="align-items: flex-end;">
+        <a class="frame" href="projects/bossa-bacteria.html" style="flex: 0 0 48%;">
+          <div class="frame-img" style="aspect-ratio: 4/3; background: #a8a49c;"></div>
+          <div class="frame-meta">
+            <span class="frame-title">Bossa Bacteria</span>
+            <span class="frame-caption">2024</span>
+          </div>
+        </a>
+        <a class="frame" href="projects/100-years.html" style="flex: 0 0 36%;">
+          <div class="frame-img" style="aspect-ratio: 3/4; background: #b0aca4;"></div>
+          <div class="frame-meta">
+            <span class="frame-title">100 Years From Now</span>
+            <span class="frame-caption">2024</span>
+          </div>
+        </a>
+      </div>
 
-      <a class="frame frame-medium" href="projects/bossa-bacteria.html">
-        <div class="frame-img" style="background: #a8a49c;"></div>
-        <div class="frame-meta">
-          <span class="frame-title">Bossa Bacteria</span>
-          <span class="frame-caption">Cultural argument made in a petri dish — science and music collide</span>
-        </div>
-      </a>
+      <!-- Row 3: Motion Suit tall left, Sonic Jars landscape right, tops aligned -->
+      <div class="wall-row" style="align-items: flex-start;">
+        <a class="frame" href="projects/motion-suit.html" style="flex: 0 0 30%;">
+          <div class="frame-img" style="aspect-ratio: 2/3; background: #bdb8b0;"></div>
+          <div class="frame-meta">
+            <span class="frame-title">Motion Suit</span>
+            <span class="frame-caption">2025</span>
+          </div>
+        </a>
+        <a class="frame" href="projects/sonic-jars.html" style="flex: 0 0 54%;">
+          <div class="frame-img" style="aspect-ratio: 16/9; background: #b4b0a8;"></div>
+          <div class="frame-meta">
+            <span class="frame-title">Sonic Jars</span>
+            <span class="frame-caption">2025</span>
+          </div>
+        </a>
+      </div>
 
-      <a class="frame frame-medium" href="projects/sonic-jars.html">
-        <div class="frame-img" style="background: #b4b0a8;"></div>
-        <div class="frame-meta">
-          <span class="frame-title">Sonic Jars</span>
-          <span class="frame-caption">Sound installation</span>
-        </div>
-      </a>
-
-      <a class="frame frame-tall" href="projects/motion-suit.html">
-        <div class="frame-img" style="background: #bdb8b0;"></div>
-        <div class="frame-meta">
-          <span class="frame-title">Motion Suit</span>
-          <span class="frame-caption">Thesis installation — wearable interface for movement and sound</span>
-        </div>
-      </a>
-
-      <a class="frame frame-small" href="projects/orsynex.html">
-        <div class="frame-img" style="background: #aca8a0;"></div>
-        <div class="frame-meta">
-          <span class="frame-title">Orsynex</span>
-          <span class="frame-caption"></span>
-        </div>
-      </a>
-
-      <a class="frame frame-wide" href="projects/100-years.html">
-        <div class="frame-img" style="background: #b0aca4;"></div>
-        <div class="frame-meta">
-          <span class="frame-title">100 Years From Now</span>
-          <span class="frame-caption"></span>
-        </div>
-      </a>
+      <!-- Row 4: Mae Zine — portrait, offset right, most recent -->
+      <div class="wall-row" style="justify-content: flex-end;">
+        <a class="frame" href="projects/mae.html" style="flex: 0 0 28%;">
+          <div class="frame-img" style="aspect-ratio: 3/4; background: #c4bdb4;"></div>
+          <div class="frame-meta">
+            <span class="frame-title">Mae</span>
+            <span class="frame-caption">2026 — Risograph zine, commission</span>
+          </div>
+        </a>
+      </div>
 
     </div>
 

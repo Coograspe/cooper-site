@@ -247,27 +247,27 @@ a:hover {
 .wall-frames {
   position: relative;
   z-index: 1;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 48px;
-  padding: 60px 80px 80px;
-  transition: opacity 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+  padding: 60px 80px 100px;
 }
 
-/* Dim all frames when one is hovered, then brighten the hovered one */
+/* Each row is its own composition */
+.wall-row {
+  display: flex;
+  align-items: center;
+  gap: 48px;
+}
+
+/* Dim siblings on hover */
 .wall-frames:has(.frame:hover) .frame {
-  opacity: 0.4;
+  opacity: 0.35;
 }
 
 .wall-frames:has(.frame:hover) .frame:hover {
   opacity: 1;
 }
-
-/* Frame sizes via grid span */
-.frame-wide  { grid-column: span 2; }
-.frame-tall  { grid-row: span 2; }
-.frame-medium { grid-column: span 1; }
-.frame-small  { grid-column: span 1; }
 
 .frame {
   display: flex;
@@ -280,14 +280,9 @@ a:hover {
 
 .frame-img {
   width: 100%;
-  aspect-ratio: 3/2;
   border: 1px solid #c8c2bc;
   box-shadow: 2px 3px 12px rgba(0,0,0,0.1);
   transition: box-shadow 0.2s ease, transform 0.2s ease;
-}
-
-.frame-tall .frame-img {
-  aspect-ratio: 2/3;
 }
 
 .frame:hover .frame-img {
@@ -305,7 +300,6 @@ a:hover {
   font-size: 13px;
 }
 
-/* Caption always in DOM but only visible on hover */
 .frame-caption {
   font-size: 11px;
   color: var(--muted);
