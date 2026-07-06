@@ -233,72 +233,75 @@ a:hover {
 /* ─── Desk page ──────────────────────────────────────── */
 .desk-page {
   position: relative;
-  min-height: calc(100vh - 49px);
-}
-
-/* Desk surface — the scan fills the whole page as background */
-.desk-surface {
-  position: fixed;
-  inset: 49px 0 0 0; /* sit below header */
-  background: #d4cfc6;
-  z-index: 0;
-}
-
-/* When you have the scan: replace .desk-surface div with an img,
-   or set background-image here */
-
-/* Cards float on top of the desk */
-.desk-cards {
-  position: relative;
-  z-index: 1;
-  columns: 3;
-  column-gap: 20px;
-  padding: 40px;
-  max-width: 1100px;
-}
-
-.card {
-  break-inside: avoid;
-  display: block;
-  margin-bottom: 20px;
-  background: var(--paper);
-  border: 1px solid var(--rule);
-  text-decoration: none;
-  color: inherit;
-}
-
-/* TEXT card */
-.card-text {
-  padding: 20px;
-  font-size: 14px;
-  line-height: 1.7;
-}
-
-/* IMAGE card */
-.card-image img,
-.card-link img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-.card-image,
-.card-link {
+  height: calc(100vh - 49px);
   overflow: hidden;
 }
 
-.card-caption {
+/* Desk surface fills the whole area — swap div for <img> when scan is ready */
+.desk-surface {
+  position: absolute;
+  inset: 0;
+  background: #c8c2b6;
+  z-index: 0;
+}
+
+/* Items scattered on the desk */
+.desk-item {
+  position: absolute;
+  transform: rotate(var(--rot, 0deg));
+  box-shadow: 2px 3px 10px rgba(0,0,0,0.18);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  z-index: 1;
+  text-decoration: none;
+  color: inherit;
+  cursor: default;
+}
+
+.desk-item:hover {
+  transform: rotate(var(--rot, 0deg)) translateY(-3px);
+  box-shadow: 4px 6px 18px rgba(0,0,0,0.22);
+  z-index: 10;
+}
+
+/* Text note — like a piece of paper on the desk */
+.item-note {
+  background: var(--paper);
+  padding: 16px 18px;
+  width: 200px;
+  font-size: 13px;
+  line-height: 1.65;
+  border: 1px solid var(--rule);
+}
+
+/* Photo / image item — white border like a print */
+.item-photo {
+  background: white;
+  padding: 8px 8px 28px 8px; /* extra bottom for caption space */
+  width: 220px;
+}
+
+.item-photo img {
   display: block;
-  padding: 10px 14px;
-  font-size: 11px;
+  width: 100%;
+  height: auto;
+  /* Placeholder color shown when image is missing */
+  min-height: 160px;
+  background: #d6d0c4;
+}
+
+.item-caption {
+  display: block;
+  padding-top: 8px;
+  font-size: 10px;
   color: var(--muted);
+  text-align: center;
 }
 
-/* Hover state for link cards */
-.card-link:hover .card-caption {
+/* Link items get a pointer and subtle hover */
+.item-link {
+  cursor: pointer;
+}
+
+.item-link:hover .item-caption {
   color: var(--ink);
-}
-
-.card-link:hover img {
-  opacity: 0.9;
 }

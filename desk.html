@@ -18,36 +18,60 @@
 
   <main class="desk-page">
 
-    <!-- Desk surface — replace div with <img src="..."> when scan is ready -->
+    <!-- Desk surface background — swap this div for an <img> when scan is ready -->
     <div class="desk-surface"></div>
 
-    <!-- Cards sit on top of the desk. Add new ones at the top.
-         Three types — copy whichever block fits:
+    <!--
+      HOW TO ADD ITEMS:
+      Copy any item block below and paste it here.
+      Adjust style="top: __%; left: __%;" to place it on the desk.
+      Adjust --rot to tilt it (try values between -8 and 8).
 
-         TEXT:  <div class="card card-text"> ... </div>
-         IMAGE: <div class="card card-image"> ... </div>
-         LINK:  <a class="card card-link" href="..." target="_blank"> ... </a>
+      THREE TYPES:
+
+      1. TEXT NOTE:
+         <div class="desk-item item-note" style="top: 20%; left: 10%; --rot: -3deg;">
+           <p>Your text here</p>
+         </div>
+
+      2. IMAGE:
+         <div class="desk-item item-photo" style="top: 40%; left: 55%; --rot: 2deg;">
+           <img src="images/yourfile.jpg" alt="">
+           <p class="item-caption">optional caption</p>
+         </div>
+
+      3. LINK (image or note that goes somewhere):
+         <a class="desk-item item-photo item-link" href="https://..." target="_blank" style="top: 30%; left: 70%; --rot: -1deg;">
+           <img src="images/yourfile.jpg" alt="">
+           <span class="item-caption">Site name ↗</span>
+         </a>
     -->
-    <div class="desk-cards">
 
-      <!-- LINK card — image that goes somewhere -->
-      <a class="card card-link" href="https://www.servinglibrary.org" target="_blank">
-        <img src="images/serving-library.jpg" alt="Serving Library">
-        <span class="card-caption">Serving Library ↗</span>
-      </a>
-
-      <!-- TEXT card — a thought, quote, or note -->
-      <div class="card card-text">
-        <p>Thinking about how a scene documents itself — who decides what gets archived, what gets lost.</p>
-      </div>
-
-      <!-- IMAGE card — a photo or scan, no link -->
-      <div class="card card-image">
-        <img src="images/placeholder.jpg" alt="">
-        <p class="card-caption">SOR issue 3 color separations</p>
-      </div>
-
+    <div class="desk-item item-note" style="top: 12%; left: 8%; --rot: -3deg;">
+      <p>Thinking about how a scene documents itself — who decides what gets archived and what gets lost.</p>
     </div>
+
+    <div class="desk-item item-photo" style="top: 8%; left: 38%; --rot: 1.5deg;">
+      <img src="images/sor-color-sep.jpg" alt="SOR color separations">
+      <p class="item-caption">SOR issue 3 — color separations</p>
+    </div>
+
+    <a class="desk-item item-photo item-link" href="https://www.servinglibrary.org" target="_blank" style="top: 5%; left: 65%; --rot: -2deg;">
+      <img src="images/serving-library.jpg" alt="Serving Library">
+      <span class="item-caption">Serving Library ↗</span>
+    </a>
+
+    <div class="desk-item item-note" style="top: 52%; left: 20%; --rot: 2deg;">
+      <p>Reading: <em>A Pattern Language</em></p>
+    </div>
+
+    <div class="desk-item item-photo" style="top: 45%; left: 55%; --rot: -4deg;">
+      <img src="images/placeholder2.jpg" alt="">
+    </div>
+
+    <a class="desk-item item-note item-link" href="https://www.printedmatter.org" target="_blank" style="top: 65%; left: 72%; --rot: 1deg;">
+      <p>Printed Matter ↗</p>
+    </a>
 
   </main>
 
