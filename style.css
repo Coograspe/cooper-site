@@ -116,32 +116,32 @@ a:hover {
   height: 380px;
   border: 2px solid var(--ink);
   position: relative;
-  background: #d6d0c4;
-  display: flex;
-  flex-direction: column;
-  padding: 16px;
-  gap: 10px;
+  background: #ccc9c0;
   transition: filter 0.2s ease;
 }
 
 .door-frame:hover .door-placeholder {
-  filter: brightness(0.93);
+  filter: brightness(0.9);
 }
 
-/* door panels — two stacked rectangles like a real apartment door */
-.door-placeholder::before,
-.door-placeholder::after {
-  content: '';
-  display: block;
+/* upper panel */
+.door-placeholder .panel-top {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  right: 16px;
+  height: 100px;
   border: 1px solid #a09a8e;
 }
 
-.door-placeholder::before {
-  flex: 1;
-}
-
-.door-placeholder::after {
-  flex: 2;
+/* lower panel */
+.door-placeholder .panel-bottom {
+  position: absolute;
+  top: 132px;
+  left: 16px;
+  right: 16px;
+  bottom: 16px;
+  border: 1px solid #a09a8e;
 }
 
 .doorknob {
