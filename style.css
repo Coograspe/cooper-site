@@ -233,9 +233,7 @@ a:hover {
 /* ─── Work / Wall page ───────────────────────────────── */
 .wall-page {
   position: relative;
-  height: calc(100vh - 49px);
-  overflow-x: auto;
-  overflow-y: hidden;
+  min-height: calc(100vh - 49px);
 }
 
 /* White wall background — swap div for <img> when scan is ready */
@@ -249,62 +247,79 @@ a:hover {
 .wall-frames {
   position: relative;
   z-index: 1;
-  display: flex;
-  align-items: flex-start;
-  gap: 60px;
-  padding: 0 80px;
-  height: 100%;
-  width: max-content;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 48px;
+  padding: 60px 80px 80px;
+  transition: opacity 0.2s ease;
 }
 
-/* Individual frame */
+/* Dim all frames when one is hovered, then brighten the hovered one */
+.wall-frames:has(.frame:hover) .frame {
+  opacity: 0.4;
+}
+
+.wall-frames:has(.frame:hover) .frame:hover {
+  opacity: 1;
+}
+
+/* Frame sizes via grid span */
+.frame-wide  { grid-column: span 2; }
+.frame-tall  { grid-row: span 2; }
+.frame-medium { grid-column: span 1; }
+.frame-small  { grid-column: span 1; }
+
 .frame {
   display: flex;
   flex-direction: column;
-  flex-shrink: 0;
+  gap: 10px;
   text-decoration: none;
   color: inherit;
-  cursor: pointer;
+  transition: opacity 0.2s ease;
 }
 
 .frame-img {
   width: 100%;
-  flex: 1;
-  border: 1px solid #c0bbb4;
-  box-shadow: 3px 4px 16px rgba(0,0,0,0.14);
+  aspect-ratio: 4/3;
+  border: 1px solid #c8c2bc;
+  box-shadow: 2px 3px 12px rgba(0,0,0,0.1);
   transition: box-shadow 0.2s ease, transform 0.2s ease;
-  /* Image goes here — background-image or <img> inside */
+}
+
+.frame-tall .frame-img {
+  aspect-ratio: 3/4;
 }
 
 .frame:hover .frame-img {
-  box-shadow: 5px 8px 24px rgba(0,0,0,0.2);
-  transform: translateY(-4px);
+  box-shadow: 4px 8px 24px rgba(0,0,0,0.18);
+  transform: translateY(-3px);
 }
 
-/* Title + desc appear below frame on hover */
-.frame-info {
-  padding-top: 10px;
+.frame-meta {
   display: flex;
   flex-direction: column;
-  gap: 3px;
-  opacity: 0;
-  transform: translateY(4px);
-  transition: opacity 0.2s ease, transform 0.2s ease;
-}
-
-.frame:hover .frame-info {
-  opacity: 1;
-  transform: translateY(0);
+  gap: 4px;
 }
 
 .frame-title {
   font-size: 13px;
 }
 
-.frame-desc {
+/* Caption always in DOM but only visible on hover */
+.frame-caption {
   font-size: 11px;
   color: var(--muted);
-  max-width: 28ch;
+  max-width: 40ch;
+  line-height: 1.5;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.25s ease, opacity 0.2s ease;
+}
+
+.frame:hover .frame-caption {
+  max-height: 80px;
+  opacity: 1;
 }
 
 /* ─── Desk page ──────────────────────────────────────── */
