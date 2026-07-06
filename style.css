@@ -79,42 +79,46 @@ a:hover {
   border-right: 1px solid var(--rule);
   display: flex;
   flex-direction: column;
-  justify-content: center;
   gap: 16px;
+  padding-top: var(--col-gap);
 }
 
-.bio-title {
-  font-size: 16px;
+.bio-photo-placeholder {
+  width: 100%;
+  aspect-ratio: 1;
+  background: #d6d0c4;
+  border: 1px solid var(--rule);
+  margin-bottom: 4px;
+}
+
+.bio-tagline {
+  font-size: 13px;
 }
 
 .bio-body {
   color: var(--muted);
-  max-width: 28ch;
+  font-size: 13px;
+  max-width: 30ch;
 }
 
 /* ─── Door center ────────────────────────────────────── */
 .door-col {
-  flex: 1.4;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 16px;
+  flex: 1.2;
+  border-right: 1px solid var(--rule);
 }
 
 .door-frame {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 16px;
+  display: block;
+  width: 100%;
+  height: 100%;
   text-decoration: none;
+  position: relative;
 }
 
 /* Placeholder door — replace with scanned image later */
 .door-placeholder {
-  width: 200px;
-  height: 380px;
-  border: 2px solid var(--ink);
+  width: 100%;
+  height: 100%;
   position: relative;
   background: #ccc9c0;
   transition: filter 0.2s ease;
@@ -127,39 +131,44 @@ a:hover {
 /* upper panel */
 .door-placeholder .panel-top {
   position: absolute;
-  top: 16px;
-  left: 16px;
-  right: 16px;
-  height: 100px;
+  top: 10%;
+  left: 12%;
+  right: 12%;
+  height: 22%;
   border: 1px solid #a09a8e;
 }
 
 /* lower panel */
 .door-placeholder .panel-bottom {
   position: absolute;
-  top: 132px;
-  left: 16px;
-  right: 16px;
-  bottom: 16px;
+  top: 36%;
+  left: 12%;
+  right: 12%;
+  bottom: 10%;
   border: 1px solid #a09a8e;
 }
 
 .doorknob {
-  width: 9px;
-  height: 9px;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
   background: #7a7468;
   border: 1px solid #5a5450;
   position: absolute;
-  right: 18px;
+  right: 14%;
   top: 55%;
   transform: translateY(-50%);
 }
 
 .door-label {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
   font-size: 12px;
-  color: var(--muted);
+  color: #7a7468;
   letter-spacing: 0.05em;
+  white-space: nowrap;
 }
 
 .door-frame:hover .door-label {
@@ -173,35 +182,47 @@ a:hover {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 16px;
-}
-
-.sitemap-heading {
-  font-size: 11px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--muted);
+  gap: 24px;
+  padding: var(--col-gap);
 }
 
 .sitemap-list {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 12px;
-}
-
-.sitemap-list li {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
+  gap: 20px;
 }
 
 .sitemap-list a {
-  font-size: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  text-decoration: none;
 }
 
-.sitemap-list a:hover {
+.sitemap-list a:hover .room-name {
   text-decoration: underline;
+}
+
+/* Placeholder scan thumbnails — replace with real scans later */
+.room-preview {
+  width: 100%;
+  height: 60px;
+  border: 1px solid var(--rule);
+  transition: filter 0.15s ease;
+}
+
+.sitemap-list a:hover .room-preview {
+  filter: brightness(0.92);
+}
+
+.rp-desk    { background: #e8e2d6; }
+.rp-wall    { background: #ece9e2; }
+.rp-library { background: #d8d4c8; }
+.rp-floor   { background: #cdc9bc; }
+
+.room-name {
+  font-size: 14px;
 }
 
 .room-note {
