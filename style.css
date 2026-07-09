@@ -1,3 +1,32 @@
+/* ─── Fonts ──────────────────────────────────────────── */
+@font-face {
+  font-family: 'FraktionMono';
+  src: url('fonts/PPFraktionMono-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'FraktionMono';
+  src: url('fonts/PPFraktionMono-RegularItalic.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'FraktionMono';
+  src: url('fonts/PPFraktionMono-Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'FraktionMono';
+  src: url('fonts/PPFraktionMono-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+
 /* ─── Reset ─────────────────────────────────────────── */
 * {
   margin: 0;
@@ -15,7 +44,7 @@
 }
 
 body {
-  font-family: monospace;
+  font-family: 'FraktionMono', monospace;
   background: var(--paper);
   color: var(--ink);
   font-size: 14px;
