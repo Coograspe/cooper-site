@@ -236,7 +236,6 @@ a:hover {
   min-height: calc(100vh - 49px);
 }
 
-/* White wall background — swap div for <img> when scan is ready */
 .wall-surface {
   position: fixed;
   inset: 49px 0 0 0;
@@ -244,77 +243,69 @@ a:hover {
   z-index: 0;
 }
 
-.wall-frames {
+/* Project list */
+.project-list {
   position: relative;
   z-index: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 64px;
-  padding: 60px 80px 100px;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 60px 40px 100px;
 }
 
-/* Each row is its own composition */
-.wall-row {
-  display: flex;
+.project-list-header {
+  display: grid;
+  grid-template-columns: 80px 1fr 180px 60px;
+  gap: 24px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--ink);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.project-row {
+  display: grid;
+  grid-template-columns: 80px 1fr 180px 60px;
+  gap: 24px;
   align-items: center;
-  gap: 48px;
-}
-
-/* Dim siblings on hover */
-.wall-frames:has(.frame:hover) .frame {
-  opacity: 0.35;
-}
-
-.wall-frames:has(.frame:hover) .frame:hover {
-  opacity: 1;
-}
-
-.frame {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--rule);
   text-decoration: none;
   color: inherit;
-  transition: opacity 0.2s ease;
+  transition: background 0.15s ease;
 }
 
-.frame-img {
-  width: 100%;
-  border: 1px solid #c8c2bc;
-  box-shadow: 2px 3px 12px rgba(0,0,0,0.1);
-  transition: box-shadow 0.2s ease, transform 0.2s ease;
+.project-row:hover {
+  background: rgba(0,0,0,0.03);
 }
 
-.frame:hover .frame-img {
-  box-shadow: 4px 8px 24px rgba(0,0,0,0.18);
-  transform: translateY(-3px);
+.project-thumb {
+  width: 80px;
+  height: 54px;
+  flex-shrink: 0;
+  transition: opacity 0.15s ease;
 }
 
-.frame-meta {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
+.project-row:hover .project-thumb {
+  opacity: 0.85;
 }
 
-.frame-title {
-  font-size: 13px;
+.project-name {
+  font-size: 14px;
 }
 
-.frame-caption {
-  font-size: 11px;
+.project-medium {
+  font-size: 12px;
   color: var(--muted);
-  max-width: 40ch;
-  line-height: 1.5;
-  overflow: hidden;
-  max-height: 0;
-  opacity: 0;
-  transition: max-height 0.25s ease, opacity 0.2s ease;
 }
 
-.frame:hover .frame-caption {
-  max-height: 80px;
-  opacity: 1;
+.project-year {
+  font-size: 12px;
+  color: var(--muted);
+  text-align: right;
 }
+
 
 /* ─── Desk page ──────────────────────────────────────── */
 .desk-page {
